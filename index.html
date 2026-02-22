@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TokoErlangga.kelontong.com</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #0f9b0f, #012b01 70%);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Pattern islami */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255,255,255,0.05) 2px, transparent 2px);
+    background-size: 40px 40px;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* Bulan sabit */
+.moon {
+    position: absolute;
+    top: 60px;
+    right: 80px;
+    width: 120px;
+    height: 120px;
+    background: gold;
+    border-radius: 50%;
+    box-shadow: -30px 0 0 0 #012b01, 0 0 30px gold;
+    animation: float 5s ease-in-out infinite;
+}
+
+/* Lampu gantung */
+.lamp {
+    position: absolute;
+    width: 3px;
+    height: 120px;
+    background: white;
+    top: 0;
+    animation: swing 3s ease-in-out infinite alternate;
+}
+
+.lamp::after {
+    content: "";
+    position: absolute;
+    top: 120px;
+    left: -10px;
+    width: 25px;
+    height: 25px;
+    background: gold;
+    border-radius: 50%;
+    box-shadow: 0 0 20px gold;
+}
+
+.l1 { left: 25%; }
+.l2 { left: 50%; }
+.l3 { left: 75%; }
+
+@keyframes swing {
+    from { transform: rotate(-5deg); }
+    to { transform: rotate(5deg); }
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Bintang */
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px 20px;
+    font-size: 34px;
+    font-weight: bold;
+    text-shadow: 0 0 15px gold;
+}
+
+.sub {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* Produk */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    padding: 15px;
+    border-radius: 25px;
+    text-align: center;
+    transition: 0.4s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    animation: slideUp 1s ease forwards;
+    opacity: 0;
+}
+
+.card:nth-child(1){animation-delay:0.3s}
+.card:nth-child(2){animation-delay:0.6s}
+.card:nth-child(3){animation-delay:0.9s}
+.card:nth-child(4){animation-delay:1.2s}
+
+@keyframes slideUp {
+    from { transform: translateY(60px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.card:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 25px gold;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.price {
+    color: gold;
+    font-weight: bold;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+button {
+    padding: 10px 15px;
+    background: gold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: orange;
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: rgba(0,0,0,0.4);
+}
+</style>
+</head>
+
+<body>
+
+<div class="moon"></div>
+<div class="lamp l1"></div>
+<div class="lamp l2"></div>
+<div class="lamp l3"></div>
+
+<!-- bintang -->
+<div class="star" style="top:20%;left:30%"></div>
+<div class="star" style="top:15%;left:60%"></div>
+<div class="star" style="top:35%;left:80%"></div>
+<div class="star" style="top:70%;left:40%"></div>
+<div class="star" style="top:85%;left:70%"></div>
+
+<header>🌙 TokoErlangga.kelontong.com 🌙</header>
+<div class="sub">Spesial Kue Lebaran | Manisnya Berkah di Bulan Ramadan ✨</div>
+
+<div class="container">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606312619344-08a7f4c3e9c3">
+<h2>🍪 Nastar Premium</h2>
+<div class="price">Rp 85.000</div>
+<button onclick="alert('Website Demo Ramadan 😎')">Pesan</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1617196037303-4c29c0d2f7e5">
+<h2>🧀 Kastengel</h2>
+<div class="price">Rp 90.000</div>
+<button onclick="alert('Website Demo Ramadan 😎')">Pesan</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1604908177522-402e1c2f6d8b">
+<h2>🍫 Putri Salju</h2>
+<div class="price">Rp 80.000</div>
+<button onclick="alert('Website Demo Ramadan 😎')">Pesan</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1625944525903-7a6b9f3f9e52">
+<h2>🥜 Kue Kacang</h2>
+<div class="price">Rp 75.000</div>
+<button onclick="alert('Website Demo Ramadan 😎')">Pesan</button>
+</div>
+
+</div>
+
+<footer>© 2026 Toko Erlangga Kelontong | Ramadan Kareem 🌙✨</footer>
+
+</body>
+</html>
